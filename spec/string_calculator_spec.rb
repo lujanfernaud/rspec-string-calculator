@@ -33,5 +33,19 @@ describe StringCalculator do
         end
       end
     end
+
+    context "unknown amount of numbers" do
+      context "given '2, 9, 6, 7, 4, 5, 6, 456'" do
+        it "returns 495" do
+          expect(StringCalculator.add("2, 9, 6, 7, 4, 5, 6, 456")).to eql(495)
+        end
+      end
+
+      context "given '182,234, 97,463, 24,239'" do
+        it "returns 1239" do
+          expect(StringCalculator.add("182,234, 97,463, 24,239")).to eql(1239)
+        end
+      end
+    end
   end
 end
