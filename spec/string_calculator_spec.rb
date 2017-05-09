@@ -69,5 +69,14 @@ describe StringCalculator do
         end
       end
     end
+
+    context "negative numbers" do
+      context "given '-5, -5'" do
+        it "raises exception 'negatives not allowed: [-5, -5]'" do
+          expect { StringCalculator.add("-5, -5") }
+            .to raise_error("negatives not allowed: [-5, -5]")
+        end
+      end
+    end
   end
 end
