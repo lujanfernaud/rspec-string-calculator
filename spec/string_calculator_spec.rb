@@ -47,5 +47,13 @@ describe StringCalculator do
         end
       end
     end
+
+    context "handle new lines between numbers" do
+      context "given '1\n2,3'" do
+        it "returns 6" do
+          expect(StringCalculator.add("1\n2,3")).to eql(6)
+        end
+      end
+    end
   end
 end
