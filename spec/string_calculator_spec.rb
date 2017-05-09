@@ -55,5 +55,19 @@ describe StringCalculator do
         end
       end
     end
+
+    context "support different delimiters" do
+      context "given '//;\n1;2'" do
+        it "returns 3" do
+          expect(StringCalculator.add("//;\n1;2")).to eql(3)
+        end
+      end
+
+      context "given '...\n1-2-3-4'" do
+        it "returns 10" do
+          expect(StringCalculator.add("...\n1-2-3-4")).to eql(10)
+        end
+      end
+    end
   end
 end
